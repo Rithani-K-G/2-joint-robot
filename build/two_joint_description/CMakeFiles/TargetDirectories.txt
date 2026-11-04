@@ -1,9 +1,0 @@
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/uninstall.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/two_joint_description_uninstall.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/test.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/edit_cache.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/rebuild_cache.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/list_install_components.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/install.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/install/local.dir
-/home/lgbot/2-joint-robot/build/two_joint_description/CMakeFiles/install/strip.dir

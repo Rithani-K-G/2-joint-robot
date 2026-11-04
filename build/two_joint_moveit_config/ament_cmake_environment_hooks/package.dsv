@@ -1,4 +1,0 @@
-source;share/two_joint_moveit_config/local_setup.bash
-source;share/two_joint_moveit_config/local_setup.dsv
-source;share/two_joint_moveit_config/local_setup.sh
-source;share/two_joint_moveit_config/local_setup.zsh

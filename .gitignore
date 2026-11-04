@@ -1,0 +1,9 @@
+
+# ROS 2 build directories
+build/
+install/
+log/
+
+# Python generated files
+**/__pycache__/
+*.pyc

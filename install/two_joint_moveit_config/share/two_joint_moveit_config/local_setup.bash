@@ -1,1 +1,0 @@
-/home/lgbot/2-joint-robot/build/two_joint_moveit_config/ament_cmake_environment_hooks/local_setup.bash

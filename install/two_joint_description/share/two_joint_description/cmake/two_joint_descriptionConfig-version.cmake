@@ -1,1 +1,0 @@
-/home/lgbot/2-joint-robot/build/two_joint_description/ament_cmake_core/two_joint_descriptionConfig-version.cmake

@@ -21,9 +21,15 @@ def generate_launch_description():
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(get_package_share_directory('gazebo_ros'),
-                         'launch', 'gazebo.launch.py')
-        )
+            os.path.join(
+                get_package_share_directory('ros_gz_sim'),
+                'launch',
+                'gz_sim.launch.py'
+            )
+        ),
+        launch_arguments={
+            'gz_args': '-r empty.sdf'
+        }.items()
     )
 
     rsp = Node(
@@ -35,9 +41,12 @@ def generate_launch_description():
     )
 
     spawn = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-topic', 'robot_description', '-entity', 'two_joint_robot'],
+        package='ros_gz_sim',
+        executable='create',
+        arguments=[
+            '-topic', 'robot_description',
+            '-name', 'two_joint_robot'
+        ],
         output='screen'
     )
 
@@ -58,7 +67,7 @@ def generate_launch_description():
     return LaunchDescription([
         gazebo,
         rsp,
-        spawn,
+        TimerAction(period=3.0, actions=[spawn]),
         TimerAction(period=5.0, actions=[jsb]),
         TimerAction(period=7.0, actions=[arm]),
     ])
