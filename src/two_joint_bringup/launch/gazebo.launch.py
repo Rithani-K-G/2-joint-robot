@@ -19,7 +19,8 @@ def generate_launch_description():
         Command([
             'xacro',
             xacro_file,
-            'controllers_file:=', controllers_file
+            ' ',
+            controllers_file
         ]),
         value_type=str
     )
