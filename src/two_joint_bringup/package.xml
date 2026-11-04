@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>two_joint_bringup</name>
+  <version>0.0.1</version>
+  <description>Gazebo and ros2_control bringup for the two-joint robot.</description>
+  <maintainer email="maintainer@example.com">Robot Team</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>two_joint_description</exec_depend>
+</package>
