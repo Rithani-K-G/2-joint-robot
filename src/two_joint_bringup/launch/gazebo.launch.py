@@ -3,6 +3,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, TimerAction
+from launch_ros.parameter_descriptions import ParameterValue
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, PathJoinSubstitution
 from launch_ros.actions import Node
@@ -14,10 +15,14 @@ def generate_launch_description():
     xacro_file = os.path.join(description_share, 'urdf', 'two_joint_robot.urdf.xacro')
     controllers_file = os.path.join(bringup_share, 'config', 'controllers.yaml')
 
-    robot_description = Command([
-        'xacro ', xacro_file,
-        ' controllers_file:=', controllers_file
-    ])
+    robot_description = ParameterValue(
+        Command([
+            'xacro',
+            xacro_file,
+            'controllers_file:=', controllers_file
+        ]),
+        value_type=str
+    )
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
