@@ -1,0 +1,17 @@
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/urdf/two_joint_robot.urdf.xacro
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/rviz/robot.rviz
+/home/lgbot/2-joint-robot/install/two_joint_description/share/ament_index/resource_index/package_run_dependencies/two_joint_description
+/home/lgbot/2-joint-robot/install/two_joint_description/share/ament_index/resource_index/parent_prefix_path/two_joint_description
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/environment/ament_prefix_path.sh
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/environment/ament_prefix_path.dsv
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/environment/path.sh
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/environment/path.dsv
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/local_setup.bash
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/local_setup.sh
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/local_setup.zsh
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/local_setup.dsv
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/package.dsv
+/home/lgbot/2-joint-robot/install/two_joint_description/share/ament_index/resource_index/packages/two_joint_description
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/cmake/two_joint_descriptionConfig.cmake
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/cmake/two_joint_descriptionConfig-version.cmake
+/home/lgbot/2-joint-robot/install/two_joint_description/share/two_joint_description/package.xml
