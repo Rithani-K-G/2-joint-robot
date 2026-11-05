@@ -1,7 +1,15 @@
+request_adapters:
+  - default_planner_request_adapters/AddTimeOptimalParameterization
+  - default_planner_request_adapters/FixWorkspaceBounds
+  - default_planner_request_adapters/FixStartStateBounds
+  - default_planner_request_adapters/FixStartStateCollision
+  - default_planner_request_adapters/FixStartStatePathConstraints
+
 planner_configs:
   RRTConnect:
     type: geometric::RRTConnect
     range: 0.0
+
 arm:
   planner_configs:
     - RRTConnect
