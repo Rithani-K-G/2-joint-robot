@@ -1,3 +1,4 @@
+
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="two_joint_robot">
 
@@ -45,7 +46,7 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
-  <!-- Link 1: rotating column -->
+  <!-- Link 1: Rotating vertical column -->
   <link name="link1">
     <visual>
       <origin xyz="0 0 0.22"/>
@@ -68,50 +69,58 @@
     </inertial>
   </link>
 
-  <!-- Joint 1: continuous revolute joint -->
-  <joint name="joint1" type="continuous">
+  <!-- Joint 1: Base rotation around Z -->
+  <joint name="joint1" type="revolute">
     <parent link="base_link"/>
     <child link="link1"/>
     <origin xyz="0 0 0.16" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14"
+           effort="100.0" velocity="1.0"/>
     <dynamics damping="0.2" friction="0.05"/>
   </joint>
 
-  <!-- Link 2: slider carriage -->
+  <!-- Link 2: Upper arm -->
   <link name="link2">
     <visual>
-      <origin xyz="0.15 0 0"/>
+      <origin xyz="0.20 0 0"/>
       <geometry>
-        <box size="0.30 0.09 0.09"/>
+        <box size="0.40 0.09 0.09"/>
       </geometry>
       <material name="orange"/>
     </visual>
     <collision>
-      <origin xyz="0.15 0 0"/>
+      <origin xyz="0.20 0 0"/>
       <geometry>
-        <box size="0.30 0.09 0.09"/>
+        <box size="0.40 0.09 0.09"/>
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0.15 0 0"/>
+      <origin xyz="0.20 0 0"/>
       <mass value="1.0"/>
       <inertia ixx="0.002" ixy="0" ixz="0"
-               iyy="0.009" iyz="0" izz="0.009"/>
+               iyy="0.014" iyz="0" izz="0.014"/>
     </inertial>
   </link>
 
-  <!-- Joint 2: prismatic joint -->
-  <joint name="joint2" type="prismatic">
+  <!-- Joint 2: Shoulder rotation, tilted 15 degrees upward -->
+  <joint name="joint2" type="revolute">
     <parent link="link1"/>
     <child link="link2"/>
-    <origin xyz="0 0 0.40" rpy="0 0 0"/>
-    <axis xyz="1 0 0"/>
-    <limit lower="0.0" upper="0.30"
-           effort="100.0" velocity="0.20"/>
-    <dynamics damping="5.0" friction="0.2"/>
+
+    <!-- Mounting position and upward tilt -->
+    <origin xyz="0 0 0.40" rpy="0 0.261799"/>
+
+    <!-- Rotation axis -->
+    <axis xyz="0 1 0"/>
+
+    <limit lower="-1.57" upper="1.57"
+           effort="100.0" velocity="1.0"/>
+
+    <dynamics damping="0.2" friction="0.05"/>
   </joint>
 
-  <!-- ROS 2 Control: Gazebo Harmonic hardware interface -->
+  <!-- ROS 2 Control -->
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
       <plugin>gz_ros2_control/GazeboSimSystem</plugin>
@@ -130,7 +139,7 @@
     </joint>
   </ros2_control>
 
-  <!-- Gazebo Harmonic ROS 2 Control Plugin -->
+  <!-- Gazebo Harmonic Plugin -->
   <gazebo>
     <plugin filename="libgz_ros2_control-system.so"
             name="gz_ros2_control::GazeboSimROS2ControlPlugin">
