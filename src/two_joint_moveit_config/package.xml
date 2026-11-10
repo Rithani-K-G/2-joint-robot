@@ -16,6 +16,8 @@
   <exec_depend>moveit_ros_visualization</exec_depend>
   <exec_depend>moveit_configs_utils</exec_depend>
   <exec_depend>moveit_simple_controller_manager</exec_depend>
+  <exec_depend>pymoveit2</exec_depend>
+  <exec_depend>rclpy</exec_depend>
   <exec_depend>two_joint_description</exec_depend>
   <exec_depend>two_joint_bringup</exec_depend>
   <export><build_type>ament_cmake</build_type></export>
