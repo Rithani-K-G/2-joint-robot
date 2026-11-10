@@ -107,8 +107,8 @@
     <parent link="link1"/>
     <child link="link2"/>
 
-    <!-- Mounting position and upward tilt -->
-    <origin xyz="0 0 0.40" rpy="0 0.261799 0"/>
+    <!-- Mounting position: 15 degrees upward around local Y -->
+    <origin xyz="0 0 0.40" rpy="0 -0.261799 0"/>
 
     <!-- Rotation axis -->
     <axis xyz="0 1 0"/>
@@ -117,6 +117,15 @@
            effort="100.0" velocity="1.0"/>
 
     <dynamics damping="0.2" friction="0.05"/>
+  </joint>
+
+  <!-- End-effector reference frame at the physical end of link2 -->
+  <link name="tool0"/>
+
+  <joint name="link2_to_tool0" type="fixed">
+    <parent link="link2"/>
+    <child link="tool0"/>
+    <origin xyz="0.40 0 0" rpy="0 0 0"/>
   </joint>
 
   <!-- ROS 2 Control -->
