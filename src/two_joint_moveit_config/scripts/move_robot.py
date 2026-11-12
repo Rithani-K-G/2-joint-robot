@@ -147,16 +147,21 @@ def main():
             f"Planning XYZ target ({x:.3f}, {y:.3f}, {z:.3f}) m"
         )
 
-        # Position-only goal: no end-effector orientation is imposed.
-        # This is appropriate for a 2-DOF arm, which cannot control all
-        # six Cartesian pose dimensions.
+
+        # Convert the XYZ target into joint-space targets.
+        # The geometric calculation above provides the joint estimates.
+        node.get_logger().info(
+            f"Planning joint target: "
+            f"joint1={math.degrees(joint1_est):.2f} deg, "
+            f"joint2={math.degrees(joint2_est):.2f} deg"
+        )
+
         trajectory = moveit.plan(
-            position=[x, y, z],
-            frame_id=BASE_LINK,
-            target_link=END_EFFECTOR_LINK,
-            tolerance_position=0.005,
+            joint_positions=[joint1_est, joint2_est],
+            joint_names=JOINT_NAMES,
             timeout_sec=30.0,
         )
+
 
         if trajectory is None:
             print(
